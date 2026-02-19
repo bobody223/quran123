@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <style>
+body{
+  text-align:center;
+  direction:rtl;
+  font-family: "Cairo", Arial;
+  font-size: 24px;
+}
+h2{
+  font-size: 32px;
+}
+select{
+  font-size: 20px;
+  padding: 8px;
+}
+</style>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>تلاوة القرآن</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
+
+<style>
+body{
+  margin:0;
+  padding:0;
+  font-family:"Cairo", sans-serif;
+  direction:rtl;
+  background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+}
+
+.container{
+  background:white;
+  width:90%;
+  max-width:400px;
+  padding:25px;
+  border-radius:20px;
+  text-align:center;
+  box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+
+h2{
+  margin-bottom:20px;
+}
+
+select{
+  width:100%;
+  padding:12px;
+  font-size:18px;
+  border-radius:10px;
+  border:1px solid #ccc;
+  margin-bottom:20px;
+}
+
+audio{
+  width:100%;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<h2>اختر الشيخ للاستماع</h2>
+
+<select onchange="playAudio(this.value)">
+  <option value="">-- اختر الشيخ --</option>
+  <option value="1">ياسر الدوسري</option>
+  <option value="2">محمد اللحيدان</option>
+  <option value="3">السديس</option>
+</select>
+
+<audio id="player" controls></audio>
+</div>
+
+<script>
+function playAudio(value){
+  var player = document.getElementById("player");
+
+  if(value == "1"){
+    player.src = "ياسر الدوسري";
+  }
+  if(value == "2"){
+    player.src = "محمد اللحيدان";
+  }
+  if(value == "3"){
+    player.src = "السديس";
+  }
+
+  player.play();
+}
+</script>
+
+</body>
+</html>
